@@ -5,8 +5,8 @@ Limiar=input('\nInsira o valor do Limiar:');
 Taxa_de_aprendizagem=input('\nInsira o valor da taxa de aprendizagem:');
 Tolerancia_a_erros=input('\nInsira o valor da tolerância a erros:');
 
-Sair=0;
-while (Sair~=1)
+Sair='n';
+while (Sair~='s')
     for Loop=1:Numero_de_entradas
         fprintf('\nInsira o valor da entrada %d:',Loop);
         Entrada(Loop)=input('');
@@ -16,7 +16,7 @@ while (Sair~=1)
         Saida_desejada=input('\nInsira o valor da saída desejada:');
         Erro=Saida_desejada-Saida
         Peso=Peso+Taxa_de_aprendizagem*Erro*Entrada
-    Sair=input('\nDeseja para o treinamento?(Sim->1)');
+    Sair=input('\nDeseja para o treinamento?(Sim->s, Não->n)');
     %     if (Erro<Tolerancia_a_erros)
     %         break;
     %     end
@@ -24,11 +24,11 @@ end
 fprintf('\nPerceptron treinado. Insira as entradas:');
 
 Sair=0;
-while(Sair~=1)
+while(Sair~='s')
     for Loop=1:Numero_de_entradas
         fprintf('\nInsira o valor da entrada %d:',Loop);
         Entrada(Loop)=input('');
     end
     Saida=Perceptron(Entrada,Peso,Bias,Limiar)
-    Sair=input('\nDeseja sair?(Sim->1)');
+    Sair=input('\nDeseja sair?(Sim->1, Não->n))');
 end
